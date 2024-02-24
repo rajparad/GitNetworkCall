@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserDetailViewModel: ObservableObject {
+@MainActor class UserDetailViewModel: ObservableObject {
 
     @Published var user: User?
     
