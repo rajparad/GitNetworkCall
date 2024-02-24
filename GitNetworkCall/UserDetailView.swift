@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  UserDetailView.swift
 //  GitNetworkCall
 //
 //  Created by RAJPARA DHRUV on 2024-02-24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct UserDetailView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -25,5 +25,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    UserDetailView()
 }
