@@ -8,22 +8,28 @@
 import SwiftUI
 
 struct UserDetailView: View {
+
+    @StateObject var viewModel = UserDetailViewModel()
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-                .frame(width: 53, height: 53)
-            Text("Hello, world!")
+            AsyncImage(url: URL(string: viewModel.user?.avatarUrl ?? "")) { image in
+                image
+                    .image?.resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .clipShape(.circle)
+            }
+            .frame(width: 73, height: 73)
+            Text(viewModel.user?.login ?? "")
                 .bold()
                 .font(.system(size: 30))
-            Text("App will Show data here.The data will be fetched from Github")
+            Text(viewModel.user?.bio ?? "")
                 .padding()
         }
         .padding()
+        .onAppear {
+            viewModel.viewDidAppear()
+        }
     }
 }
 
-#Preview {
-    UserDetailView()
-}

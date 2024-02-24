@@ -11,7 +11,7 @@ import SwiftUI
 struct GitNetworkCallApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            UserDetailView()
         }
     }
 }
