@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct UserDetailView: View {
-
+    
     @StateObject var viewModel = UserDetailViewModel()
     @State var username: String = ""
-   
+    
     
     var body: some View {
         VStack {
@@ -30,7 +30,7 @@ struct UserDetailView: View {
                 .font(.system(size: 30))
             Text(viewModel.user?.bio ?? "")
                 .padding()
-
+            
             
             TextField("Username", text: $username)
                 .border(.black, width: 1)
@@ -40,7 +40,7 @@ struct UserDetailView: View {
             Button(action: {
                 viewModel.isLoading = true
                 viewModel.viewDidAppear(username: username)
-               
+                
             }) {
                 Text("Get Data")
                     .padding()

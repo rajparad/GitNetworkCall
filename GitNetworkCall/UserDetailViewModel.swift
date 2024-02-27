@@ -8,14 +8,14 @@
 import Foundation
 
 @MainActor class UserDetailViewModel: ObservableObject {
-
+    
     @Published var user: User?
     @Published var isLoading: Bool = true
     
     init(user: User? = nil) {
         self.user = user
     }
-
+    
     func viewDidAppear(username: String) {
         Task {
             do {
